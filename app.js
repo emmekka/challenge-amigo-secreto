@@ -3,17 +3,22 @@
 let amigos = [];
 
 function agregarAmigo() {
-    let nombre = document.getElementById('amigo').innerText;
+    let campo = document.getElementById('amigo');
+    let nombre = campo.innerText;
     if (nombre == "") {
         alert("Por favor, inserte un nombre.")
     } else {
         amigos.push(nombre);
         actualizarLista(nombre);
-        limpiar(nombre);
+        limpiar(campo);
     }
 }
 
 function actualizarLista(nombre) {
     let lista = document.getElementById('listaAmigos');
     lista.innerHTML += `<li>${nombre}</li>`;
+}
+
+function limpiar(elemento) {
+    elemento.innerHTML = "";
 }
