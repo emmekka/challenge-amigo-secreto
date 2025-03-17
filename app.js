@@ -4,13 +4,13 @@ let amigos = [];
 
 function agregarAmigo() {
     let campo = document.getElementById('amigo');
-    let nombre = campo.innerText;
+    let nombre = campo.value;
     if (nombre == "") {
         alert("Por favor, inserte un nombre.")
     } else {
         amigos.push(nombre);
         actualizarLista(nombre);
-        limpiar(campo);
+        campo.value = "";
     }
 }
 
@@ -19,6 +19,3 @@ function actualizarLista(nombre) {
     lista.innerHTML += `<li>${nombre}</li>`;
 }
 
-function limpiar(elemento) {
-    elemento.innerHTML = "";
-}
